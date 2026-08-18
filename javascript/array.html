@@ -8,9 +8,12 @@
 <body>
     <script>
         const car=["BMW", "Audi", "Volvo"];
-        for(let i=0; i<car.length; i++){
-            document.write("<br>"+car[i]);
+        let text=" ";
+        for(let i=0; i<car.length; i+=2){
+            text += car[i] + "<br>";
         }
+        document.write(text);
+        console.log(text);
     </script>
 </body>
 </html>
