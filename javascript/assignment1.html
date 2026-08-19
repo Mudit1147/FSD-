@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container" style="width: 400px; height: 400px; background-color: lightgray; align-items: center; justify-content: center; display: flex; flex-direction: column;">
+        <h2 >Online Shop</h2>
+         <script>
+        const items ={
+            Tea: 100,
+            Coffee: 200,
+            Atta: 600,
+            Chini: 800
+        }
+        document.write("<h3>Items and their prices:</h3>");
+        for (let x in items){
+            document.write(x + " : " + items[x] + "<br>");
+        }
+        </script>
+        <button onclick="B()">BUY NOW</button>
+        <script>
+            function B(){
+                let a = prompt("Enter the item you want to buy");
+                if (items.hasOwnProperty(a)) {
+                    document.write("<h3>You have selected: " + a + "</h3>");
+                    document.write("<h3>Price: " + items[a] + "</h3>");
+                } else {
+                    document.write("<h3>Item not found!</h3>");
+                }
+                let b = prompt("Enter the quantity you want to buy");
+                if (items.hasOwnProperty(a)) {
+                    let totalPrice = items[a] * b;
+                    document.write("<h3>Total Price: " + totalPrice + "</h3>");
+                }
+            }
+        </script>
+    </div>
+   
+</body>
+</html>
