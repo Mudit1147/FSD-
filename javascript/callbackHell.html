@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test1(cb){
+            setTimeout(()=>{
+                console.log("test1 is completed");
+                cb();
+            },2000);    
+        }
+        function test2(cb){
+            setTimeout(()=>{
+                console.log("test2 is completed");
+                cb();
+            },1000);    
+        }function test3(cb){
+            setTimeout(()=>{
+                console.log("test3 is completed");
+                cb();
+            },500);    
+        }function test4(cb){
+            setTimeout(()=>{
+                console.log("test4 is completed");
+                cb();
+            },100);    
+        }
+
+        test1(()=>{
+            test2(()=>{
+                test3(()=>{
+                    test4();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
