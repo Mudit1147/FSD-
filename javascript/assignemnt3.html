@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container" style="width: 600px; height: 600px; background-color: rgb(7, 98, 154); align-items: center; justify-content: center; display: flex; flex-direction: column; text-align: center; margin: 10px auto; border-radius: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="image.png" alt="description" style="border-radius: 50%; size: 450px; height: 45px; width: 65px;">
+        <span style="color: white; font-size: 32px;">Bus Booking System</span>
+        </div>
+
+        <div style="width: 550px; height: 30px; background-color:rgb(206, 217, 223); margin: 10px; align-items: center; justify-content: center; display: flex; flex-direction: column; border-radius: 20px;">
+            <h3 style="color: rgb(7, 48, 68);">User Information</h3>
+        </div>
+
+        <div style=" align-items: center; justify-content: center; display: flex; flex-direction: column;">
+            <form>
+                <label for="name" style="color: rgb(206, 217, 223);">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="age" style="color: rgb(206, 217, 223);">Age:</label>
+                <input type="number" id="age" name="age"><br><br>
+                <label for="Aadhar" style="color: rgb(206, 217, 223);">Aadhar:</label>
+                <input type="text" id="Aadhar" name="Aadhar"><br><br>
+                <label for="city" style="color: rgb(206, 217, 223);">Select Your city:</label>
+                <select id="city" name="city">
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                </select><br><br>
+                <label for="phone" style="color: rgb(206, 217, 223);">Phone:</label>
+                <input type="tel" id="phone" name="phone"><br><br>
+                <label for="date" style="color: rgb(206, 217, 223);">Journey Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+            </form>
+        </div>
+
+        <div style="width: 550px; height: 30px; background-color:rgb(206, 217, 223); margin: 10px; align-items: center; justify-content: center; display: flex; flex-direction: column; border-radius: 20px;">
+            <h3 style="color: rgb(7, 48, 68);">Bus Information</h3>
+        </div>
+
+        <div>
+            <label for="bus" style="color: rgb(206, 217, 223);">Select Your Bus:</label>
+            <select id="bus" name="bus">
+                <option value="AC">AC BUS 500$</option>
+                <option value="Non-AC">Non-AC BUS 300$</option>
+            </select><br><br>
+            <label for="seats" style="color: rgb(206, 217, 223);">Select Number of Seats:</label>
+            <input type="number" id="seats" name="seats" min="1" max="5"><br><br>
+        </div><br>
+
+        <button onclick="calculateTotalPrice()">BOOK NOW</button>
+
+    </div>
+
+    <script>
+        const busPrices = {
+            "AC": 500,
+            "Non-AC": 300
+        };
+
+        function calculateTotalPrice() {
+            const busType = document.getElementById("bus").value;
+            const numberOfSeats = parseInt(document.getElementById("seats").value);
+            const totalPrice = busPrices[busType] * numberOfSeats;
+            alert("Total Price: " + totalPrice);
+        }
+
+        </script>
+
+    
+</body>
+</html>
